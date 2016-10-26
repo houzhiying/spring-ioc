@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- 抽象bean：bean的abstract属性为true，这样的bean不能被ioc容器实例化，只能被继承配置 -->
+	<bean id="adress" 
+	p:city="Beijing" p:street="Wudaokou" abstract="true"/>
+	
+	<!-- bean配置的继承：使用bean的parent属性指定继承那个bean -->
+	<bean id="adress2" class="com.hzy.spring.bean.autowire.Adress" p:street="Dazhongsi" parent="adress"/>
+	
+</beans>
